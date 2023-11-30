@@ -30,9 +30,18 @@ export default function App() {
 }
 
 function FriendList() {
+  const friends = initialFriends;
   return (
     <div>
-      <ul>List</ul>
+      <ul>
+        {friends.map((friend) => (<Friend friend={friend} key={friend.id} />))}
+      </ul>
     </div>
+  )
+}
+
+function Friend ({friend}) {
+  return (
+    <li>{friend.name}</li>
   )
 }
