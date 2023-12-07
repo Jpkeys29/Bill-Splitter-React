@@ -23,12 +23,12 @@ const initialFriends = [
 
 export default function App() {
   const [showAddFriend, setShowAddFriend] = useState(false);
-  
+
   return (
     <div className="app">
       <div className="sidebar">
         <FriendList />
-        <FormAddFriend />
+        {showAddFriend && <FormAddFriend />}
         <Button>Add friend</Button>
       </div>
 
