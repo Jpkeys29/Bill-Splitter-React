@@ -76,7 +76,18 @@ function FormAddFriend () {
   const [image, setImage] = useState("");
 
   function handleSubmit(e) {
-    e.preventDefaul();
+    e.preventDefault();
+
+    if(!name || !image) return;
+
+    const newFriend = {
+      name,
+      image,
+      balance: 0,
+      id: crypto.randomUUID(),
+    };
+
+    console.log(newFriend);
   }
   return (
     <form className="form-add-friend">
